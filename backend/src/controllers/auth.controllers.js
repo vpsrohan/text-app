@@ -13,10 +13,13 @@ export const signup = async (req, res) => {
       return res.status(400).json({ mesage: "All fields are required" });
     }
 
-    if (password.length < 6) {
+    if (password.length < 6 || password.length > 100) {
       return res
         .status(400)
-        .json({ message: "Password must be at least 6 characters" });
+        .json({
+          message:
+            "Password must be at least 6 characters and less than 100 characters",
+        });
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

@@ -11,7 +11,7 @@ const aj = arcjet({
     // Shield protects your app from common attacks e.g. SQL injection
     shield({ mode: "LIVE" }),
     // Create a bot detection rule
-    detectBot({
+    /*detectBot({
       mode: "LIVE", // Blocks requests. Use "DRY_RUN" to log only
       // Block all bots except the following
       allow: [
@@ -22,6 +22,7 @@ const aj = arcjet({
         //"CATEGORY:PREVIEW", // Link previews e.g. Slack, Discord
       ],
     }),
+    */
     // Create a token bucket rate limit. Other algorithms are supported.
     slidingWindow({
       mode: "LIVE",
